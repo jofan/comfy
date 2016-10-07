@@ -1,0 +1,9 @@
+{
+    "docs": [
+        {"_id": "0", "userId": "fix0", "msg": "Fixture 0", "list": ["one", "two"], "data": {"key": "val"}},
+        {"_id": "1", "userId": "fix1", "msg": "Fixture 1", "list": ["one", "two"], "data": {"key": "val"}},
+        {"_id": "2", "userId": "fix2", "msg": "Fixture 2", "list": ["one", "two"], "data": {"key": "val"}},
+        {"_id": "3", "userId": "fix3", "msg": "Fixture 3", "list": ["one", "two"], "data": {"key": "val"}},
+        {"_id": "4", "userId": "fix4", "msg": "Fixture 4", "list": ["one", "two"], "data": {"key": "val"}}
+    ]
+}
