@@ -1,6 +1,6 @@
 {
   "name": "Comfy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "CouchDB 2.0 HTTP wrapper",
   "main": "index.js",
   "scripts": {

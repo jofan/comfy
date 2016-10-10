@@ -152,6 +152,7 @@ module.exports = function(url, config) {
 
     // This is a convenience method allowing
     // part of a document to be updated
+    // Only shallow update
     // It will result in two DB requests (GET & PUT)
     function edit(db, id, data, next) {
         get(db, id, function(err, doc) {
@@ -159,7 +160,11 @@ module.exports = function(url, config) {
                 next(err, doc);
             }
             else {
-                // doc =
+                for (var key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        doc[key] = data[key];
+                    }
+                }
                 update(db, id, doc, function(err, response) {
                     next(err, response);
                 });

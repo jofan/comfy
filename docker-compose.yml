@@ -8,7 +8,6 @@ services:
     command: npm test
     environment:
       - NODE_ENV=test
-      - COUCHDB_PORT=5994
       - COUCHDB_USER=admin
       - COUCHDB_PASSWORD=qwerty
     links:
@@ -17,8 +16,6 @@ services:
       - .:/app
       - /app/node_modules
   db:
-    build:
-      context: .
-      dockerfile: Dockerfile.db
+    image: jofan/couchdb-tester:latest
     ports:
       - '5994:5984'

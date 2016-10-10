@@ -101,6 +101,26 @@ test('update document', function(t) {
     });
 });
 
+test('edit document', function(t) {
+    db.insert('db_test', {
+        "name": "test-doc",
+        "version": 1
+    }, function(err, response) {
+        var id = response.id;
+        var rev = response.rev;
+        db.edit(
+            'db_test',
+            id,
+            {"version": 2},
+            function(err, result) {
+                t.error(err);
+                t.equal(result.ok, true);
+                t.end();
+            }
+        );
+    });
+});
+
 test('delete document', function(t) {
     db.insert('db_test', {
         "name": "test-doc-delete"
